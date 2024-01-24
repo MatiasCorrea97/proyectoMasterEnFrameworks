@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- ESTILOS -->
+<link rel="stylesheet" href="assets/images/css/styles.css">
+
+</head>
+<body>
+<header id="header">
+    <div id="center">
+    <!-- logo -->
+    <div id="logo">
+<img src="assets/images/Angular_full_color_logo.svg.png" alt="logotipo" class="app-logo">
+<span id="brand">
+<strong>Master</strong> ANGULAR
+</span>
+</div>
+
+<!-- menu -->
+<nav id="menu">
+<ul>
+<li>
+    <a href="index.html">Inicio</a>
+</li>
+<li>
+    <a href="blog.html">Blog</a>
+</li>
+<li>
+    <a href="formulario.html">Formulario</a>
+</li>
+<li>
+    <a href="#">Pagina 1</a>
+</li>
+<li class="pagina2">
+    <a href="#">Pagina 2</a>
+</li>
+</ul>
+</nav>
+    </div>
+    <!-- limpiar flotados-->
+    <div class="clear-fix"></div>
+</header>
+<div id="slider" class="slider-big">
+    <h1>Bienvenidos al master de ANGULARhecho por Matias Correa, del curso de master de Frameworks de Javascript.</h1>
+    <a href="/ANGULAR/blog.html" class="btn-white">Ir al blog</a>
+</div>
+<div class="center">
+    <section id="content">
+    <h2 class="subHeader">Ultimos articulos</h2>
+
+                            <!--AÑADIR ARTICULOS VIA JS-->
+                            <script type="text/javascript">
+                                window.addEventListener ("load", function (){
+                                    var template = document.getElementById ("article-template");
+                                    var articles = document.getElementById("articles");
+                                
+                                        for (var i= 2; i <= 3; i++){
+                                        var clonado = template.cloneNode(true);
+                                        clonado.removeAttribute("id");
+                                        var h2 = clonado.getElementsByTagName("h2")[0];
+                                        h2 .innerHTML = h2.textContent + ' ' + i;
+                            
+                                        articles.appendChild(clonado);
+                                        }});
+                                        </script> 
+
+<!--listado de articulos-->
+    <div id="articles">
+    <article class="article-item" id="article-template">
+    <div class="image-wrap" > 
+    <img src="https://urbantravel.tur.ar/wp-content/uploads/2017/07/Bariloche-nahuel-huapi_b.jpg" alt="paisaje"></div>
+        <h2>Articulo de prueba</h2>
+        <span class="date">
+        Hace 5 minutos
+        </span>
+        <a href="#">Leer mas</a>
+        <div class="clear-fix"></div>
+        </article>
+    </div>
+    </section>
+
+
+<aside id="sidebar">
+    <div id="nav-blog" class="sidebar-item">
+        <h3>Puedes hacer esto</h3>
+        <a href="#" class="btn btn-succes">Crear articulo</a>
+    </div>
+
+<div id="search" class="sidebar-item">
+    <h3>Buscador</h3>
+    <p>Encuentra el articulo que buscas</p>
+        <form>
+            <input type="text" name="search">
+            <input type="submit" name="submit" value="Buscar" class="btn btn-succes">
+        </form>
+    </div>
+    </aside>
+    <div class="clear-fix"></div>
+</div>
+<footer id="footer">
+    <div class="center">
+        <p> &copy; Master en frameworks para Javascript</p>
+    </div>
+
+</footer>
+</body>
+</html>
